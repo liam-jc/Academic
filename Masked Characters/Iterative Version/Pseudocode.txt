@@ -1,0 +1,19 @@
+//Liam Carlisle 40091770
+//COMP352
+//Assignment # 1 - Question 2 - Pseudocode
+//Due Date September 28 2020
+
+function RevealStr(String input)
+    //Takes in a string of random length of 1s, 0s, and *s
+    //and prints a list of strings with all possibilities
+    //of replacing each * with 0 and 1.
+    //It will also print information saying how many *s were found
+    //in the string and where.
+    var asterisk counter
+    var array of indexes of asterisk locations in string
+    //for loop finds amount and location of *s in string:
+    for (integer i = 0; i < (length of input); i++)
+        if (character at index i in input string == '*')
+            add one to asterisk counter
+            add i to list of asterisk indexes
+    amount of output strings will be

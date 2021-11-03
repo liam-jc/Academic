@@ -1,0 +1,73 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+Time complexity is O(2\expnd0\expndtw0\kerning0
+\super n\expnd0\expndtw0\kerning0
+\nosupersub ) with n being the number of asterisks used to mask. This is because the number of possible strings to generate is on this order, since it must generate 2 strings for every asterisk.\'a0\
+\
+\pard\pardeftab720\sl400
+\cf0 \expnd0\expndtw0\kerning0
+Timing observations:\
+Algorithm test run times with input string length of 100 and 1 asterisk:\
+	70 milliseconds\
+	71 milliseconds\
+	64 milliseconds\
+\pard\pardeftab720\sl300
+\cf0 	47 milliseconds\
+\pard\pardeftab720\sl400
+\cf0 	57 milliseconds\
+	52 milliseconds\
+Algorithm test run times with input string length of 100 and 2 asterisks:\
+	86 milliseconds\
+	144 milliseconds\
+	124 milliseconds\
+	115 milliseconds\
+	188 milliseconds\
+	75 milliseconds\
+Algorithm test run times with input string length of 100 and 10 asterisks:\
+	1900 milliseconds\
+	1397 milliseconds\
+	1353 milliseconds\
+	1394 milliseconds\
+	1281 milliseconds\
+	1419 milliseconds\
+Algorithm test run times with input string length of 100 and 12 asterisks:\
+	2531 milliseconds\
+	2680 milliseconds\
+	2392 milliseconds\
+	2482 milliseconds\
+	2526 milliseconds\
+	2393 milliseconds\
+Algorithm test run times with input string length of 100 and 14 asterisks:\
+	6848 milliseconds\
+	6755 milliseconds\
+	6629 milliseconds\
+	6599 milliseconds\
+	6915 milliseconds\
+	6654 milliseconds\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+\
+Comparison of iterative and recursive versions:\
+Time complexity of both algorithms is O(2\expnd0\expndtw0\kerning0
+\super n\expnd0\expndtw0\kerning0
+\nosupersub ) with n being the number of asterisks used to mask. However, the recursive algorithm is approximately 2\expnd0\expndtw0\kerning0
+\super n\expnd0\expndtw0\kerning0
+\nosupersub , whereas the iterative algorithm includes additional lower order time complexities of n^2. These make the iterative version slower in general, and more pronouncedly so for small n. Also, the space complexity of \expnd0\expndtw0\kerning0
+the iterative version\expnd0\expndtw0\kerning0
+ is far worse than that of \expnd0\expndtw0\kerning0
+the recursive version\expnd0\expndtw0\kerning0
+. This is due to the simplicity of \expnd0\expndtw0\kerning0
+the recursive version\expnd0\expndtw0\kerning0
+. \expnd0\expndtw0\kerning0
+The iterative version\expnd0\expndtw0\kerning0
+ generates many extra strings because it replaces the asterisks one at a time, copying new strings every time. So \expnd0\expndtw0\kerning0
+the iterative version\expnd0\expndtw0\kerning0
+ ends up producing many extraneous strings in its process that aren\'92t used in the final output.\
+\
+\
+}
