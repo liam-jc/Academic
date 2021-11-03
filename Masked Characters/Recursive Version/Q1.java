@@ -42,9 +42,6 @@ public class Q1 {
 	}
 	
 	public static void main(String args[]) {
-
-		
-
 		//this part is to generate test string:
 				StringBuilder stringToTest = new StringBuilder();
 				int numberOfAsterisksForTest = 2; //change this to test different number of *s. Must be < or == testStringActualLength.
