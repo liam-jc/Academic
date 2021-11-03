@@ -78,7 +78,7 @@ public class Q2{
 
 
 	public static void main (String args[]) {
-//this part is to generate test string:
+	//this part is to generate test string:
 		StringBuilder stringToTest = new StringBuilder();
 		int numberOfAsterisksForTest = 2; //change this to test different number of *s. Must be < or == testStringActualLength.
 		int testStringActualLength = 4;
@@ -131,7 +131,7 @@ public class Q2{
 		}
 
 
-//this part is to run test:
+	//this part is to run test:
 		long startTime = System.currentTimeMillis();
 		RevealStr(stringToTest.toString());
 		long endTime = System.currentTimeMillis();
