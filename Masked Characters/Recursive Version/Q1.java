@@ -1,6 +1,6 @@
 /*	A program that takes as input a string of any length of random number of binary characters “0 “ and “1”
-	and a masked “*” character at some positions, and find all possible sequences of binary strings
-	that can be construct by replacing the masked ”*” character by either 0 or 1.
+	and a masked “*” character at some positions, and finds all possible sequences of binary strings
+	that can be constructed by replacing the masked ”*” character by either 0 or 1.
 	Written by Liam Carlisle, September 28 2020.
 	A programming assignment for the Data Structures and Algorithms (COMP 352) course at Concordia University Montreal.
 */
