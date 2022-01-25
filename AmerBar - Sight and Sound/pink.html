@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- ***autoredirect: -->
+        <meta http-equiv="refresh" content="40;/Users/liamj/Documents/!ameryWeb/index.html" /> 
+        
+        <style>
+                body {
+                background-color:black;
+                }
+
+                .centered {
+                    position: fixed;
+                    left: 50%;
+                    bottom: -40px;
+                    transform: translate(-50%, -50%);
+                    margin: 0 auto;    
+                }
+                
+                .clic {
+                    padding-top: 50px;
+                    padding-bottom: 70px;
+                    font-family: helvetica; 
+                    font-size: 5em;
+                    height: 20%;
+                    overflow: hidden;
+                    background: black;
+                    color: #c150ab; 
+                }
+
+                .clic p {
+                    top: 50%;
+                    height: 0%;
+                    margin: 0;
+                    line-height: 50px;
+                    text-align: center;
+                }
+
+                .marquee {
+                    padding-top: 50px;
+                    padding-bottom: 70px;
+                    font-family: helvetica; 
+                    font-size: 5em;
+                    height: 20%;
+                    overflow: hidden;
+                    position: relative;
+                    background: black;
+                    color: #c150ab; 
+                }
+                
+                .marquee p {
+                    top: 50%;
+                    position: absolute;
+                    width: 12000px;
+                    height: 0%;
+                    margin: 0;
+                    line-height: 50px;
+                    text-align: left;
+                    -moz-transform: translateX(100%);
+                    -webkit-transform: translateX(100%);
+                    transform: translateX(100%);
+                    -moz-animation: scroll-left 2s linear infinite;
+                    -webkit-animation: scroll-left 2s linear infinite;
+                    animation: scroll-left 40s linear infinite;
+                }
+                
+                @-moz-keyframes scroll-left {
+                    0% {
+                        -moz-transform: translateX(10%);
+                    }
+                    100% {
+                        -moz-transform: translateX(-100%);
+                    }
+                }
+                
+                @-webkit-keyframes scroll-left {
+                    0% {
+                        -webkit-transform: translateX(10%);
+                    }
+                    100% {
+                        -webkit-transform: translateX(-100%);
+                    }
+                }
+                
+                @keyframes scroll-left {
+                    0% {
+                        -moz-transform: translateX(10%);
+                        -webkit-transform: translateX(10%);
+                        transform: translateX(10%);
+                    }
+                    100% {
+                        -moz-transform: translateX(-100%);
+                        -webkit-transform: translateX(-100%);
+                        transform: translateX(-100%);
+                    }
+                }
+
+                /* stars: */
+                .column {
+                    flex: 10%;
+                    padding: 0px;
+                    /* width: 70px;
+                    height: 70px; */
+                }
+
+                .row {
+                    display: flex;
+                    height: 100px;
+                }
+        </style>
+    </head>
+   
+    <body onload="myFunction()">
+        <!-- star1 -->
+        <div class="row">           
+            <div class="column"> 
+            </div>           
+            <div class="column">                    
+                <img id="star1" alt="star1" style="width:20%;padding-left: 15%;margin-top:20%" src="./Assets/Star_GIFs_ 2.gif"/> 
+            </div>        
+            <div class="column"> 
+            </div>      
+            <div class="column">                           
+            </div>
+            <div class="column"> 
+            </div>
+            <div class="column"> 
+            </div>  
+        </div>
+
+        <!-- ***click here text -->
+        <div id=clicker class="clic">
+            <p>Click Me</p>
+        </div>
+
+        <!-- marquee -->
+        <div id=marqueeAppear class="marquee" style=display:none>
+            <p> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                INSTRUMENTAL 3 BARS
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                . . .
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                BABY YOU'RE ALL THAT I WANT
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                WHEN YOU'RE LYIN' HERE IN MY ARMS
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                I'M FINDIN' IT HARD TO BELIEVE
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                WE'RE IN HEAVEN </p>           
+        </div>
+
+        
+
+        <br><br><br><br><br><br>
+        <div class="centered"> 
+            <img width="400" height="200" alt="Artist gif 1" src="./Assets/3 - Pink Question Mark/FixedIcon30001.png" />
+        </div>
+
+        <!-- stars2 and 3 -->
+        <div class="row">
+            <div class="column"> 
+            </div>   
+            <div class="column">                    
+                <img id="star3" alt="star3" style="width:10%;padding: 60%;" src="./Assets/Star_GIFs_ 2.gif"/>                 
+            </div>
+            <div class="column"> 
+            </div>      
+            <div class="column">                    
+                <img id="star2" alt="star2" style="width:7%;padding: 10%;" src="./Assets/Star_GIFs_ 2.gif"/>                 
+            </div>
+            <div class="column"> 
+            </div>  
+        </div>
+        
+
+
+
+        <!-- iframe autoplay hack -->
+        <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+        
+        
+        
+        
+        <audio autoplay style="display:none" id="player">
+            <source src="./Assets/3 - Pink Question Mark/Heaven DJ Sammy Clip.m4a" type="audio/mp4">
+            Your browser does not support the audio element.
+        </audio>
+       
+        <!-- <audio style="display:none" id="player">
+            <source src="./Assets/3 - Pink Question Mark/Heaven DJ Sammy Clip.m4a" type="audio/mp4">
+            Your browser does not support the audio element.
+        </audio> -->
+
+        
+        <button onclick="myFunction()"></button>
+        <p id="demo"></p>
+        <script>
+            document.addEventListener('click', musicPlay);
+            function musicPlay() {
+                document.getElementById('player').play();
+                document.removeEventListener('click', musicPlay);
+            }
+            function myFunction() {
+                var x = document.getElementById("player").autoplay;
+                document.getElementById("demo").innerHTML = x;
+            }
+
+            //*** marquee appear onclick
+            document.addEventListener('click', showDiv);
+            function showDiv() {
+                document.getElementById('marqueeAppear').style.display = "block";
+            }
+
+            //*** click text disappear onclick
+            document.addEventListener('click', dontShowDiv);
+            function dontShowDiv() {
+                document.getElementById('clicker').style.display = "none";
+            }
+        </script>
+     </body>
+    
+</html>

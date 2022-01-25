@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            .centered {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;   
+                width: 250px;
+                height: 250px;            
+            }
+
+            .column {
+                flex: 16.6%;
+                padding: 5px;
+                z-index: 100;
+            }
+
+            .row {
+                display: flex;
+            }
+
+            #topLayer {
+                z-index: 2;
+            }
+
+            #bottomLayer {
+                z-index: 1;
+            }
+
+            #myContainer2 {
+                flex: 100%;
+                position: relative;
+                background-color: #5f967f;
+            }
+
+            .myGif {
+                width: 70px;
+                height: 120px;
+                position: absolute;          
+            }
+
+            .myCouch {
+                width: 170px;
+                height: 110px;
+                position: absolute;          
+            }
+
+            #AmerbarLogo{
+                width: 22%;
+                padding-top: 1%;
+                padding-bottom: 2%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </head>
+
+
+    <body onload="myMove()">
+        <div id ="myContainer2"> 
+             <!-- static images (logo and question marks)-->              
+            <div>
+                <img id="AmerbarLogo" alt="Amerbar logo" src="./Assets/Homepage/Background/ Amerbar.png"/>
+            </div>
+            <div id="topLayer">
+                <div class="row">
+                    <div class="column"> 
+                    </div>   
+                    <div class="column"> 
+                    </div>      
+                    <div class="column">                    
+                        <a href="./purple.html">
+                            <img id="purpleQ" alt="purpleQuestionMark" style="width:100%" src="./Assets/Homepage/PurpleQ3.gif"/>
+                        </a>                        
+                    </div>
+                    <div class="column">    
+                        <a href="./blue.html">
+                            <img id="blueQ" alt="blueQuestionMark" style="width:100%" src="./Assets/Homepage/BlueQ.gif"/>
+                        </a>                       
+                    </div>
+                    <div class="column"> 
+                    </div>
+                    <div class="column"> 
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="column"> 
+                    </div>
+                    <div class="column"> 
+                    </div>  
+                    <div class="column">                    
+                        <a href="./orange.html">
+                            <img id="orangeQ" alt="orangeQuestionMark" style="width:100%" src="./Assets/Homepage/OrangeQ.gif"/>
+                        </a>                        
+                    </div>
+                    <div class="column">                    
+                        <a href="./pink.html">
+                            <img id="pinkQ" alt="pinkQuestionMark" style="width:100%" src="./Assets/Homepage/PinkQ.gif"/>
+                        </a>                        
+                    </div>
+                    <div class="column"> 
+                    </div>
+                    <div class="column"> 
+                    </div>  
+                </div>
+            </div>
+
+
+            <!-- movement images -->  
+            <div id="bottomLayer">
+                <img class=myGif id="myGif1" alt="beer" src="./Assets/Homepage/Background/beer1571.png"/>     
+                <img class=myGif id="myGif2" alt="cake" src="./Assets/Homepage/Background/Cake1571.png"/> 
+                <img class=myGif id="myGif3" alt="chair1" src="./Assets/Homepage/Background/Chair1.png"/>
+                <img class=myGif id="myGif4" alt="chair2" src="./Assets/Homepage/Background/Chair21571.png"/> 
+                <img class=myCouch id="myGif5" alt="couch" src="./Assets/Homepage/Background/Couch1571.png"/> 
+                <img class=myGif id="myGif6" alt="flower" src="./Assets/Homepage/Background/flower1571.png"/> 
+                <img class=myGif id="myGif7" alt="glass" src="./Assets/Homepage/Background/Glass1571.png"/> 
+                <img class=myGif id="myGif8" alt="goblet" src="./Assets/Homepage/Background/Goblet1571.png"/> 
+                <img class=myGif id="myGif9" alt="table" src="./Assets/Homepage/Background/Table1571.png"/>  
+            </div>
+           
+        
+        </div>
+        
+
+
+        <script>
+        //*** "bouncing dvd logo" image movement
+            var id = null;
+            var xSpeed1 = -1; //starting direction 
+            var ySpeed1 = -1;    
+
+            var xSpeed2 = -1;
+            var ySpeed2 = -1;    
+
+            var xSpeed3 = -1;
+            var ySpeed3 = -1;
+            
+            var xSpeed4 = -1;
+            var ySpeed4 = -1; 
+
+            var xSpeed5 = 1;
+            var ySpeed5 = 1; 
+
+            var xSpeed6 = 1;
+            var ySpeed6 = 1; 
+
+            var xSpeed7 = 0.5;
+            var ySpeed7 = 1;
+
+            var xSpeed8 = 1;
+            var ySpeed8 = 0.5; 
+
+            var xSpeed9 = 0.5;
+            var ySpeed9 = -0.5;
+            
+            
+            // function myMove() { //encapsulating will only run last function, idk why
+            //     moveEach2();
+            // }
+            function myMove(){
+                    var elemGif1 = document.getElementById("myGif1");
+                    var elemGif2 = document.getElementById("myGif2");
+                    var elemGif3 = document.getElementById("myGif3");
+                    var elemGif4 = document.getElementById("myGif4");
+                    var elemGif5 = document.getElementById("myGif5");
+                    var elemGif6 = document.getElementById("myGif6");
+                    var elemGif7 = document.getElementById("myGif7");
+                    var elemGif8 = document.getElementById("myGif8");
+                    var elemGif9 = document.getElementById("myGif9");
+
+                    var beerFasterX = 1;
+                    var beerFasterY = 1;
+                    var cakeFasterX = 1;
+                    var cakeFasterY = 1;
+
+                    var imageWidth = Math.floor(elemGif1.offsetWidth);
+                    var imageHeight = Math.floor(elemGif1.offsetHeight);
+                    var couchWidth = Math.floor(elemGif5.offsetWidth);
+                    var couchHeight = Math.floor(elemGif5.offsetHeight);
+                    var tableWidth = Math.floor(elemGif9.offsetWidth);
+                    var tableHeight = Math.floor(elemGif9.offsetHeight);
+                    var elemContainerWidth = Math.floor(document.getElementById("myContainer2").offsetWidth);
+                    var elemContainerHeight = Math.floor(document.getElementById("myContainer2").offsetHeight);
+                    
+                    //random start positions:
+                    var xPos1 = Math.floor(Math.random()*(elemContainerWidth - imageWidth)); 
+                    var yPos1 = Math.floor(Math.random()*(elemContainerHeight - imageHeight));
+
+                    var xPos2 = Math.floor((Math.random()*(elemContainerWidth - imageWidth))/2);
+                    var yPos2 = Math.floor((Math.random()*(elemContainerHeight - imageHeight))/2);
+
+                    var xPos3 = Math.floor(Math.random()*(elemContainerWidth - imageWidth));
+                    var yPos3 = Math.floor(Math.random()*(elemContainerHeight - imageHeight));
+
+                    var xPos4 = Math.floor(Math.random()*(elemContainerWidth - imageWidth));
+                    var yPos4 = Math.floor(Math.random()*(elemContainerHeight - imageHeight));
+                    
+                    var xPos5 = Math.floor(Math.random()*(elemContainerWidth - couchWidth));
+                    var yPos5 = Math.floor(Math.random()*(elemContainerHeight - couchHeight));
+
+                    var xPos6 = Math.floor(Math.random()*(elemContainerWidth - imageWidth));
+                    var yPos6 = Math.floor(Math.random()*(elemContainerHeight - imageHeight));
+
+                    var xPos7 = Math.floor(Math.random()*(elemContainerWidth - imageWidth));
+                    var yPos7 = Math.floor(Math.random()*(elemContainerHeight - imageHeight));
+
+                    var xPos8 = Math.floor(Math.random()*(elemContainerWidth - imageWidth));
+                    var yPos8 = Math.floor(Math.random()*(elemContainerHeight - imageHeight));
+
+                    var xPos9 = Math.floor(Math.random()*(elemContainerWidth - tableWidth));
+                    var yPos9 = Math.floor(Math.random()*(elemContainerHeight - tableHeight));
+
+                    clearInterval(id);
+                    id = setInterval(frame, 5);
+                    function frame() {
+                        elemContainerWidth = Math.floor(document.getElementById("myContainer2").offsetWidth); //will adapt if window resized
+                        elemContainerHeight = Math.floor(document.getElementById("myContainer2").offsetHeight);
+                        imageWidth = Math.floor(elemGif1.offsetWidth); //will adapt if window resized
+                        imageHeight = Math.floor(elemGif1.offsetHeight);
+                        couchWidth = Math.floor(elemGif5.offsetWidth);
+                        tableWidth = Math.floor(elemGif9.offsetWidth);
+                        tableHeight = Math.floor(elemGif9.offsetHeight);
+
+                    //*** Element1 (beer)
+                        if (xPos1 == elemContainerWidth - imageWidth || xPos1 == 0){
+                            if (beerFasterX > 0){
+                                xSpeed1 = xSpeed1 * -0.5;
+                                beerFasterX = -beerFasterX;
+                            } else {
+                                xSpeed1 = xSpeed1 * -2;
+                                beerFasterX = -beerFasterX;
+                            }
+                        }
+                        if (yPos1 == elemContainerHeight - imageHeight|| yPos1 == 0){
+                            if (beerFasterY > 0){
+                                ySpeed1 = ySpeed1 * -0.5;
+                                beerFasterY = -beerFasterY;
+                            } else {
+                                ySpeed1 = ySpeed1 * -2;
+                                beerFasterY = -beerFasterY;
+                            }
+                        }
+                        xPos1 = xPos1 + xSpeed1;
+                        yPos1 = yPos1 + ySpeed1;
+                        elemGif1.style.top = yPos1 + 'px';
+                        // elemGif1.style.rotate = 190 + 'px'; //can be used to rotate elements
+                        elemGif1.style.left = xPos1 + 'px';   
+
+                    //*** Element2 (cake)
+                        if (xPos2 == elemContainerWidth - imageWidth || xPos2 == 0){
+                            if (cakeFasterX > 0){
+                                xSpeed2 = xSpeed2 * -0.25;
+                                cakeFasterX = -cakeFasterX;
+                            } else {
+                                xSpeed2 = xSpeed2 * -4;
+                                cakeFasterX = -cakeFasterX;
+                            }
+                        }
+                        if (yPos2 == elemContainerHeight - imageHeight || yPos2 == 0){
+                            if (cakeFasterY > 0){
+                                ySpeed2 = ySpeed2 * -0.25;
+                                cakeFasterY = -cakeFasterY;
+                            } else {
+                                ySpeed2 = ySpeed2 * -4;
+                                cakeFasterY = -cakeFasterY;
+                            }
+                        }
+                        xPos2 = xPos2 + xSpeed2;
+                        yPos2 = yPos2 + ySpeed2;
+                        elemGif2.style.top = yPos2 + 'px';
+                        elemGif2.style.left = xPos2 + 'px';
+                        
+                    //*** Element3 (chair1)
+                        if (xPos3 == elemContainerWidth - imageWidth || xPos3 == 0){
+                            xSpeed3 = xSpeed3 * -1;
+                        }
+                        if (yPos3 == elemContainerHeight - imageHeight || yPos3 == 0){
+                            ySpeed3 = ySpeed3 * -1;
+                        }
+                        xPos3 = xPos3 + xSpeed3;
+                        yPos3 = yPos3 + ySpeed3;
+                        elemGif3.style.top = yPos3 + 'px';
+                        elemGif3.style.left = xPos3 + 'px';
+
+                    //*** Element4 (chair2)
+                        if (xPos4 == elemContainerWidth - imageWidth || xPos4 == 0){
+                            xSpeed4 = xSpeed4 * -1;
+                        }
+                        if (yPos4 == elemContainerHeight - imageHeight || yPos4 == 0){
+                            ySpeed4 = ySpeed4 * -1;
+                        }
+                        xPos4 = xPos4 + xSpeed4;
+                        yPos4 = yPos4 + ySpeed4;
+                        elemGif4.style.top = yPos4 + 'px';
+                        elemGif4.style.left = xPos4 + 'px';
+
+                     //*** Element5 (couch)
+                        if (xPos5 == elemContainerWidth - couchWidth || xPos5 == 0){
+                            xSpeed5 = xSpeed5 * -1;
+                        }
+                        if (yPos5 == elemContainerHeight - couchHeight || yPos5 == 0){
+                            ySpeed5 = ySpeed5 * -1;
+                        }
+                        xPos5 = xPos5 + xSpeed5;
+                        yPos5 = yPos5 + ySpeed5;
+                        elemGif5.style.top = yPos5 + 'px';
+                        elemGif5.style.left = xPos5 + 'px';
+
+                    //*** Element6 (flower)
+                        if (xPos6 == elemContainerWidth - imageWidth || xPos6 == 0){
+                            xSpeed6 = xSpeed6 * -1;
+                        }
+                        if (yPos6 == elemContainerHeight - imageHeight || yPos6 == 0){
+                            ySpeed6 = ySpeed6 * -1;
+                        }
+                        xPos6 = xPos6 + xSpeed6;
+                        yPos6 = yPos6 + ySpeed6;
+                        elemGif6.style.top = yPos6 + 'px';
+                        elemGif6.style.left = xPos6 + 'px';
+
+                    //*** Element7 (glass)
+                        if (xPos7 == elemContainerWidth - imageWidth || xPos7 == 0){
+                            xSpeed7 = xSpeed7 * -1;
+                        }
+                        if (yPos7 == elemContainerHeight - imageHeight || yPos7 == 0){
+                            ySpeed7 = ySpeed7 * -1;
+                        }
+                        xPos7 = xPos7 + xSpeed7;
+                        yPos7 = yPos7 + ySpeed7;
+                        elemGif7.style.top = yPos7 + 'px';
+                        elemGif7.style.left = xPos7 + 'px';
+
+                    //*** Element8 (goblet)
+                        if (xPos8 == elemContainerWidth - imageWidth || xPos8 == 0){
+                            xSpeed8 = xSpeed8 * -1;
+                        }
+                        if (yPos8 == elemContainerHeight - imageHeight || yPos8 == 0){
+                            ySpeed8 = ySpeed8 * -1;
+                        }
+                        xPos8 = xPos8 + xSpeed8;
+                        yPos8 = yPos8 + ySpeed8;
+                        elemGif8.style.top = yPos8 + 'px';
+                        elemGif8.style.left = xPos8 + 'px';
+
+                    //*** Element9 (table)
+                        if (xPos9 == elemContainerWidth - tableWidth || xPos9 == 0){
+                            xSpeed9 = xSpeed9 * -1;
+                        }
+                        if (yPos9 == elemContainerHeight - tableHeight || yPos9 == 0){
+                            ySpeed9 = ySpeed9 * -1;
+                        }
+                        xPos9 = xPos9 + xSpeed9;
+                        yPos9 = yPos9 + ySpeed9;
+                        elemGif9.style.top = yPos9 + 'px';
+                        elemGif9.style.left = xPos9 + 'px';
+
+
+                    }     
+            }
+            // function moveEach2(){ //old version for encapsulating
+            //         var elemGif = document.getElementById("myGif2");
+            //         var elemContainer = document.getElementById("myContainer2");
+            //         var xPos = Math.floor(Math.random()*500);
+            //         var yPos = Math.floor(Math.random()*400);;
+            //         clearInterval(id);
+            //         id = setInterval(frame, 10);
+            //         function frame() {
+            //             if (xPos == 510 || xPos == 0){
+            //                 xSpeed = xSpeed * -1;
+            //             }
+            //             if (yPos == 402 || yPos == 0){
+            //                 ySpeed = ySpeed * -1;
+            //             }
+            //             xPos = xPos + xSpeed;
+            //             yPos = yPos + ySpeed;
+            //             elemGif.style.top = yPos + 'px';
+            //             elemGif.style.left = xPos + 'px';                  
+            //         }     
+            // }
+            
+        </script>
+    </body>
+</html>
