@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- ***autoredirect: -->
-        <meta http-equiv="refresh" content="40;/Users/liamj/Documents/!ameryWeb/index.html"/> 
-        
+        <!-- ***autoredirect at end of song: -->
+        <meta http-equiv="refresh" content="40;./index.html" /> 
         <style>
                 body {
                 background-color:black;
@@ -30,7 +29,6 @@
                     margin: 0;
                     /* position: absolute; */
                     top: 40%;
-                    
                 }
                 
                 .marquee p {
@@ -55,22 +53,18 @@
                 @-moz-keyframes scroll-left {
                     0% {
                         -moz-transform: translateX(10%);
-                        /* -moz-transform: translateY(-60%); */
                     }
                     100% {
                         -moz-transform: translateX(-100%);
-                        /* -moz-transform: translateY(-60%); */
                     }
                 }
                 
                 @-webkit-keyframes scroll-left {
                     0% {
                         -webkit-transform: translateX(10%);
-                        /* -webkit-transform: translateY(-60%); */
                     }
                     100% {
                         -webkit-transform: translateX(-100%);
-                        /* -webkit-transform: translateY(-60%); */
                     }
                 }
                 
@@ -79,19 +73,11 @@
                         -moz-transform: translateX(10%);
                         -webkit-transform: translateX(10%);
                         transform: translateX(10%);
-
-                        /* -moz-transform: translateY(-60%);
-                        -webkit-transform: translateY(-60%);
-                        transform: translateY(-60%); */
                     }
                     100% {
                         -moz-transform: translateX(-100%);
                         -webkit-transform: translateX(-100%);
                         transform: translateX(-100%);
-
-                        /* -moz-transform: translateY(-60%);
-                        -webkit-transform: translateY(-60%);
-                        transform: translateY(-60%); */
                     }
                 }
 
@@ -99,8 +85,6 @@
                 .column {
                     flex: 10%;
                     padding: 0px;
-                    /* width: 70px;
-                    height: 70px; */
                 }
 
                 .row {
@@ -153,9 +137,6 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 THIS TIME </p>     
         </div>
-
-        
-
         <br><br><br><br><br><br>
         <div class="centered"> 
             <img width="100%" height="100%" alt="Artist gif 1" src="./Assets/2 - Orange Question Mark/FixedIcon20001.png" />
@@ -175,27 +156,14 @@
             <div class="column"> 
             </div>  
         </div>
-        
-
-
 
         <!-- iframe autoplay hack -->
-        <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
-        
-        
-        
-        
+        <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe> 
         <audio autoplay style="display:none" id="player">
             <source src="./Assets/2 - Orange Question Mark/FefeDobson-EverythingClip.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
-       
-        <!-- <audio style="display:none" id="player">
-            <source src="./Assets/2 - Orange Question Mark/FefeDobson-EverythingClip.mov" type="audio/mp4">
-            Your browser does not support the audio element.
-        </audio> -->
 
-        
         <button onclick="myFunction()"></button>
         <p id="demo"></p>
         <script>
@@ -217,5 +185,4 @@
             }
         </script>
      </body>
-    
 </html>
