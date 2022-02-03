@@ -1,5 +1,5 @@
 /*	A program that takes as input a .txt file and generates an alphabetized list of the words it contains.
- *  It will ignore punctuation, numbers, and duplicate words. An example input PersonOfTheCentury.txt is included in folder.
+ *      It will ignore punctuation, numbers, and duplicate words. An example input PersonOfTheCentury.txt is included in folder.
  * 	Output is redirected to the file SubDictionary.txt.
  *	Written by Liam Carlisle, April 19 2020.
  *	A programming assignment for the OOP II (COMP 249) course at Concordia University Montreal.
